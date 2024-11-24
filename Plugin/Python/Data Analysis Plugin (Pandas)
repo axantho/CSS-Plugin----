@@ -1,0 +1,18 @@
+# data_analysis_plugin.py
+import pandas as pd
+
+class DataAnalyzer:
+    def __init__(self, filepath):
+        self.filepath = filepath
+        self.data = pd.read_csv(filepath)
+
+    def summarize_data(self):
+        return self.data.describe()
+
+    def filter_data(self, column, value):
+        return self.data[self.data[column] == value]
+
+# Usage
+analyzer = DataAnalyzer('data.csv')
+print(analyzer.summarize_data())
+print(analyzer.filter_data('column_name', 'value'))
