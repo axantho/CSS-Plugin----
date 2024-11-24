@@ -1,0 +1,21 @@
+<?php
+/*
+Plugin Name: Custom Post Type - Books
+Description: A plugin to create a custom post type for Books.
+Version: 1.0
+Author: Your Name
+*/
+
+function create_books_post_type() {
+    register_post_type('books', [
+        'labels' => [
+            'name' => 'Books',
+            'singular_name' => 'Book',
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => ['slug' => 'books'],
+        'supports' => ['title', 'editor', 'thumbnail'],
+    ]);
+}
+add_action('init', 'create_books_post_type');
