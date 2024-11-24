@@ -1,0 +1,48 @@
+<?php
+/*
+Plugin Name: Simple Widget
+Description: A plugin to create a custom widget.
+Version: 1.0
+Author: Your Name
+*/
+
+class Simple_Widget extends WP_Widget {
+    function __construct() {
+        parent::__construct(
+            'simple_widget',
+            'Simple Widget',
+            ['description' => 'A simple widget to display text.']
+        );
+    }
+
+    public function widget($args, $instance) {
+        echo $args['before_widget'];
+        if (!empty($instance['text'])) {
+            echo $args['before_title'] . $instance['text'] . $args['after_title'];
+        }
+        echo $args['after_widget'];
+    }
+
+    public function form($instance) {
+        $text = !empty($instance['text']) ? $instance['text'] : 'Default Text';
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('text'); ?>">Text:</label>
+            <input class="widefat" id="<?php echo $this->get_field_id('text'); ?>" 
+                   name="<?php echo $this->get_field_name('text'); ?>" 
+                   type="text" value="<?php echo esc_attr($text); ?>" />
+        </p>
+        <?php
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = [];
+        $instance['text'] = (!empty($new_instance['text'])) ? strip_tags($new_instance['text']) : '';
+        return $instance;
+    }
+}
+
+function register_simple_widget() {
+    register_widget('Simple_Widget');
+}
+add_action('widgets_init', 'register_simple_widget');
