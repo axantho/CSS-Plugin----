@@ -1,0 +1,32 @@
+// Install express and socket.io
+// npm install express socket.io
+
+const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+
+// Set up connection event
+io.on('connection', (socket) => {
+  console.log('A user connected');
+
+  // Emit event to the client
+  socket.emit('message', 'Hello from the server');
+
+  // Listen for messages from client
+  socket.on('clientMessage', (msg) => {
+    console.log('Message from client: ' + msg);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
+
+// Start the server
+server.listen(3000, () => {
+  console.log('Server running on http://localhost:3000');
+});
