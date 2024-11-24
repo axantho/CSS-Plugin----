@@ -1,0 +1,21 @@
+# api_request_plugin.py
+import requests
+
+class APIRequester:
+    def __init__(self, api_url):
+        self.api_url = api_url
+
+    def fetch_data(self):
+        response = requests.get(self.api_url)
+        if response.status_code == 200:
+            return response.json()  # Assuming the response is JSON
+        else:
+            return None
+
+# Usage
+api = APIRequester('https://api.example.com/data')
+data = api.fetch_data()
+if data:
+    print(data)
+else:
+    print("Failed to fetch data.")
