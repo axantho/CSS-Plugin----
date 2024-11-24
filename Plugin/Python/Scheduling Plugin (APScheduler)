@@ -1,0 +1,19 @@
+# scheduling_plugin.py
+from apscheduler.schedulers.blocking import BlockingScheduler
+import time
+
+class TaskScheduler:
+    def __init__(self):
+        self.scheduler = BlockingScheduler()
+
+    def run_task(self, task_function, interval_seconds):
+        self.scheduler.add_job(task_function, 'interval', seconds=interval_seconds)
+        self.scheduler.start()
+
+# Example function to run
+def my_task():
+    print("Task executed!")
+
+# Usage
+scheduler = TaskScheduler()
+scheduler.run_task(my_task, 5)  # Run my_task every 5 seconds
