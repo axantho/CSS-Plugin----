@@ -1,0 +1,6 @@
+<div id="datepicker"></div>
+<script>
+  $(function() {
+    $('#datepicker').datepicker();
+  });
+</script>
