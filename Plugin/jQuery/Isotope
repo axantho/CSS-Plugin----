@@ -1,0 +1,10 @@
+<div class="grid">
+  <div class="element-item" data-category="metal">...</div>
+  <div class="element-item" data-category="transition">...</div>
+</div>
+<script>
+  $('.grid').isotope({
+    itemSelector: '.element-item',
+    layoutMode: 'fitRows'
+  });
+</script>
