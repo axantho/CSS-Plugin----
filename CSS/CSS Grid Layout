@@ -1,0 +1,13 @@
+/* Creating a simple grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 10px;
+}
+
+.grid-item {
+  background: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
