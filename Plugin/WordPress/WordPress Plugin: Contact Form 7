@@ -1,0 +1,8 @@
+add_action('wpcf7_before_send_mail', 'custom_email_handler');
+function custom_email_handler($contact_form) {
+    $submission = WPCF7_Submission::get_instance();
+    if ($submission) {
+        $data = $submission->get_posted_data();
+        // Custom email logic
+    }
+}
