@@ -1,0 +1,4 @@
+<a href="image.jpg" data-lightbox="example-set"><img src="thumbnail.jpg" alt=""></a>
+<script>
+  // Add lightbox initialization (if needed) after including the plugin
+</script>
