@@ -1,0 +1,16 @@
+/* Flexbox for centering content */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f0f8ff;
+}
+
+.flex-item {
+  background-color: #007acc;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 18px;
+}
