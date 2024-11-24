@@ -1,0 +1,7 @@
+/* Custom shape with clip-path */
+.clip-path-box {
+  width: 300px;
+  height: 200px;
+  background-color: #ff6f61;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
