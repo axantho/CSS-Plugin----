@@ -1,0 +1,9 @@
+<select class="js-example-basic-single" name="state">
+  <option value="NY">New York</option>
+  <option value="CA">California</option>
+</select>
+<script>
+  $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+  });
+</script>
