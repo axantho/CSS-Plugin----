@@ -1,0 +1,14 @@
+/* Styling a paragraph */
+p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Adding background and padding */
+.container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
