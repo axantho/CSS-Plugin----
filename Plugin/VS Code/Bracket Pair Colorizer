@@ -1,0 +1,7 @@
+{
+  "bracketPairColorizer.activeScopeCSS": [
+    "borderStyle: dotted",
+    "borderWidth: 1px",
+    "borderColor: green"
+  ]
+}
