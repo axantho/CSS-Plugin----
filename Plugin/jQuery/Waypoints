@@ -1,0 +1,6 @@
+<div id="waypoint">Scroll to me!</div>
+<script>
+  $('#waypoint').waypoint(function(direction) {
+    alert('You have scrolled to a waypoint!');
+  });
+</script>
