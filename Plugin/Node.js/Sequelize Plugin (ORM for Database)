@@ -1,0 +1,38 @@
+// Install sequelize and pg for PostgreSQL
+// npm install sequelize pg
+
+const { Sequelize, DataTypes } = require('sequelize');
+
+// Initialize Sequelize with PostgreSQL
+const sequelize = new Sequelize('postgres://user:password@localhost:5432/database');
+
+// Define a model
+const User = sequelize.define('User', {
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
+
+// Sync the model with the database
+sequelize.sync()
+  .then(() => {
+    console.log('Database synced');
+  })
+  .catch((error) => {
+    console.error('Error syncing database:', error);
+  });
+
+// Sample to create a user
+async function createUser() {
+  await User.create({
+    username: 'john_doe',
+    email: 'john.doe@example.com',
+  });
+}
+
+createUser();
