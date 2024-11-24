@@ -1,0 +1,11 @@
+<div id="calendar"></div>
+<script>
+  $(document).ready(function() {
+    $('#calendar').fullCalendar({
+      events: [
+        { title: 'Event 1', start: '2024-01-01' },
+        { title: 'Event 2', start: '2024-01-07' }
+      ]
+    });
+  });
+</script>
