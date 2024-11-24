@@ -1,0 +1,13 @@
+<?php
+/*
+Plugin Name: Greeting Shortcode
+Description: A plugin to display a greeting via shortcode.
+Version: 1.0
+Author: Your Name
+*/
+
+function greeting_shortcode($atts) {
+    $atts = shortcode_atts(['name' => 'Guest'], $atts, 'greeting');
+    return "Hello, " . esc_html($atts['name']) . "! Welcome to our site.";
+}
+add_shortcode('greeting', 'greeting_shortcode');
