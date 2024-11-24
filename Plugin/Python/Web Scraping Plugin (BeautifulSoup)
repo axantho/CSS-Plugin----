@@ -1,0 +1,17 @@
+# web_scraping_plugin.py
+import requests
+from bs4 import BeautifulSoup
+
+class WebScraper:
+    def __init__(self, url):
+        self.url = url
+
+    def scrape(self):
+        response = requests.get(self.url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        titles = soup.find_all('h2')  # Example: Extracting all <h2> headers
+        return [title.text for title in titles]
+
+# Usage
+scraper = WebScraper('https://example.com')
+print(scraper.scrape())
