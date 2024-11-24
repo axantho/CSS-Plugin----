@@ -1,0 +1,10 @@
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .menu {
+    display: block;
+    text-align: center;
+  }
+}
