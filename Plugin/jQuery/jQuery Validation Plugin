@@ -1,0 +1,14 @@
+<form id="myForm">
+  <label for="name">Name:</label>
+  <input id="name" name="name" type="text">
+  <button type="submit">Submit</button>
+</form>
+<script>
+  $(document).ready(function() {
+    $('#myForm').validate({
+      rules: {
+        name: "required"
+      }
+    });
+  });
+</script>
